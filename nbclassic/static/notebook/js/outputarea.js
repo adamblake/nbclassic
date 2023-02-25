@@ -698,7 +698,7 @@ define([
                 try {
                     if (!this.trusted && !OutputArea.safe_outputs[type]) {
                         // not trusted, sanitize HTML
-                        if (type===MIME_HTML || type==='text/svg') {
+                        if (type===MIME_HTML || type===MIME_SVG || type==='text/svg') {
                             var parsed = $(security.sanitize_html_and_parse(value));
                             toinsert = append.apply(this, [parsed, md, element, handle_inserted]);
                         } else {
